@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 210 15% 15%;
 
-    /* Steel Blue Primary */
-    --primary: 210 50% 25%;
+    /* Super-Tech Red Primary */
+    --primary: 0 85% 55%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 210 50% 20%;
+    --primary-hover: 0 85% 45%;
 
     /* Industrial Gray Secondary */
     --secondary: 210 10% 92%;
@@ -29,10 +29,10 @@
     --muted: 210 10% 96%;
     --muted-foreground: 210 10% 45%;
 
-    /* Industrial Orange Accent */
-    --accent: 25 95% 53%;
+    /* Super-Tech Silver Accent */
+    --accent: 210 15% 65%;
     --accent-foreground: 0 0% 98%;
-    --accent-light: 25 95% 65%;
+    --accent-light: 210 15% 75%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
