@@ -1,8 +1,13 @@
-import { Award, FileText, Shield, CheckCircle, Download, Eye } from "lucide-react";
+import { Award, FileText, Shield, CheckCircle, Download, Eye, X } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import iso from "@/assets/ISOCERTVALID17.06.27.pdf";
+import { useState } from "react";
 
 const Certifications = () => {
+
+const [pdfToView, setPdfToView] = useState(null);
+  
   const certifications = [
     {
       title: "ISO 9001:2015",
@@ -11,7 +16,8 @@ const Certifications = () => {
       issuer: "International Organization for Standardization",
       icon: Award,
       status: "Active",
-      color: "border-primary bg-primary/5"
+      color: "border-primary bg-primary/5",
+      document: iso
     },
     {
       title: "UDYAM Registration",
@@ -20,7 +26,9 @@ const Certifications = () => {
       issuer: "Ministry of MSME, Government of India",
       icon: Shield,
       status: "Active",
-      color: "border-green-500 bg-green-50"
+      color: "border-green-500 bg-green-50",
+      document: "UDYAM-MH-26-0010205"
+
     },
     {
       title: "GST Registration",
@@ -29,7 +37,9 @@ const Certifications = () => {
       issuer: "Government of India",
       icon: FileText,
       status: "Active",
-      color: "border-blue-500 bg-blue-50"
+      color: "border-blue-500 bg-blue-50",
+      document: "27AEYPK2673R1ZB"
+
     }
   ];
 
@@ -109,20 +119,42 @@ const Certifications = () => {
                   </div>
                   
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Eye className="h-4 w-4 mr-2" />
-                      View
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Download className="h-4 w-4 mr-2" />
-                      Download
-                    </Button>
+                    <Button 
+  variant="outline" 
+  size="sm" 
+  className="flex-1" 
+  onClick={() => cert.document.endsWith(".pdf") && setPdfToView(cert.document)}
+>
+  <Eye className="h-4 w-4 mr-2" />
+  View
+</Button>
                   </div>
                 </CardContent>
               </Card>
             );
           })}
         </div>
+
+        {pdfToView && (
+  <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] flex flex-col">
+      <div className="flex items-center justify-between p-4 border-b">
+        <h3 className="text-lg font-semibold">Certificate</h3>
+        <Button variant="ghost" onClick={() => setPdfToView(null)}>
+          <X className="h-5 w-5" />
+        </Button>
+      </div>
+      <div className="flex-1">
+        <iframe
+          src={pdfToView}
+          className="w-full h-full rounded-b-lg"
+          title="Certificate PDF"
+        />
+      </div>
+    </div>
+  </div>
+)}
+
 
         {/* ISO 9001:2015 Highlight */}
         <div className="bg-gradient-to-r from-primary to-primary-hover text-white rounded-lg p-8 lg:p-12 mb-16">

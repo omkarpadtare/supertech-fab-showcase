@@ -17,7 +17,6 @@ const Navbar = () => {
     { name: "Quality", href: "/quality" },
     { name: "Industries", href: "/industries" },
     { name: "Clients", href: "/clients" },
-    { name: "Certifications", href: "/certifications" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact Us", href: "/contact" },
   ];
@@ -33,7 +32,7 @@ const Navbar = () => {
             <img src={superTechLogo} alt="Super-Tech" className="h-10 w-10" />
             <div>
               <span className="text-xl font-bold text-primary">Super Tech</span>
-              <p className="text-xs text-muted-foreground">Precision in Fabrication</p>
+              <p className="text-xs text-muted-foreground">Heavy Fabrication</p>
             </div>
           </Link>
 

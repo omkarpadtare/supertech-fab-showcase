@@ -2,6 +2,7 @@ import { Award, CheckCircle, FileText, Download, Eye, X } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import iso from "@/assets/ISOCERTVALID17.06.27.pdf"; 
 
 const Quality = () => {
   const [showPDFViewer, setShowPDFViewer] = useState(false);
@@ -84,44 +85,33 @@ const Quality = () => {
                 <Eye className="h-5 w-5 mr-2" />
                 View Certificate
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-primary"
-              >
-                <Download className="h-5 w-5 mr-2" />
-                Download Certificate
-              </Button>
+
             </div>
           </div>
         </div>
 
         {/* PDF Viewer Modal */}
-        {showPDFViewer && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] flex flex-col">
-              <div className="flex items-center justify-between p-4 border-b">
-                <h3 className="text-lg font-semibold">ISO 9001:2015 Certificate</h3>
-                <Button variant="ghost" onClick={() => setShowPDFViewer(false)}>
-                  <X className="h-5 w-5" />
-                </Button>
-              </div>
-              <div className="flex-1 p-4 bg-muted/30 flex items-center justify-center">
-                <div className="text-center">
-                  <FileText className="h-16 w-16 text-primary mx-auto mb-4" />
-                  <p className="text-lg font-semibold mb-2">Quality Certificate</p>
-                  <p className="text-muted-foreground mb-4">
-                    ISO 9001:2015 Certification for Quality Management System
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Certificate viewing and download functionality will be integrated 
-                    with actual certificate documents.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+{/* PDF Viewer Modal */}
+{showPDFViewer && (
+  <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+    <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] flex flex-col">
+      <div className="flex items-center justify-between p-4 border-b">
+        <h3 className="text-lg font-semibold">ISO 9001:2015 Certificate</h3>
+        <Button variant="ghost" onClick={() => setShowPDFViewer(false)}>
+          <X className="h-5 w-5" />
+        </Button>
+      </div>
+      <div className="flex-1">
+        <iframe
+          src={iso} // <-- place your PDF in /public/certificates/
+          className="w-full h-full rounded-b-lg"
+          title="ISO 9001:2015 Certificate"
+        />
+      </div>
+    </div>
+  </div>
+)}
+
 
         {/* Quality Process */}
         <div className="mb-16">

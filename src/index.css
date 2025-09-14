@@ -25,6 +25,10 @@
     --secondary: 210 10% 92%;
     --secondary-foreground: 210 15% 15%;
 
+    --plane: 0 85% 55%;
+    --plane-foreground: 0 0% 98%;
+    --plane-hover: 0 85% 45%;
+
     /* Muted Grays */
     --muted: 210 10% 96%;
     --muted-foreground: 210 10% 45%;

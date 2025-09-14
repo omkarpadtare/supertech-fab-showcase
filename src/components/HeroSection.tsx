@@ -32,7 +32,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-xl lg:text-2xl mb-8 text-gray-200 leading-relaxed max-w-xl">
-              Precision in Fabrication | Excellence in Delivery. 
+              Heavy Fabrication | Excellence in Delivery. 
               Leading manufacturer of boiler components and critical fabricated structures.
             </p>
 

@@ -54,8 +54,12 @@ const Footer = () => {
                 <Building2 className="h-4 w-4 text-red-200 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-red-100">Unit I - Bhosari MIDC</p>
-                  <p className="text-red-200 text-xs">J251/252, M.I.D.C, Pune</p>
+                  <p className="text-red-200 text-xs">J251/252, M.I.D.C, Bhosari, Pune – 411026, Maharashtra, India</p>
                 </div>
+                <div>
+                  <p className="text-red-100">Unit II - Chakan MIDC</p>
+                  <p className="text-red-200 text-xs">Plot No. B4, M.I.D.C, Mahalunge, Tal. Khed, Pune – 410501, Maharashtra, India</p>
+                </div> 
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-red-200" />
@@ -74,7 +78,7 @@ const Footer = () => {
             © 2024 Super Tech. All rights reserved.
           </p>
           <p className="text-red-200 text-sm mt-2 md:mt-0">
-            Design and Developed by <span className="text-white font-medium">Raydito Services</span>
+            Design and Developed by <span className="text-white font-medium"><a target="_blank" href="https://raydito.com">Raydito Services</a></span>
           </p>
         </div>
       </div>

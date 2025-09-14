@@ -1,9 +1,19 @@
 import { Image, Factory, Wrench, Truck, Building } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import fabricationWork from "@/assets/fabrication-work.jpg";
+import fabricationWork from "@/assets/fabrication.png";
 import heroManufacturing from "@/assets/hero-manufacturing.jpg";
 import machinery from "@/assets/machinery.jpg";
+import plant from "@/assets/plant.png";
+import hrsg from "@/assets/hrsg.png";
+import industrialtank from "@/assets/industrial-tank.png"; 
+import steelwork from "@/assets/steel-work.png"; 
+import packaging from "@/assets/packaging.png";
+import insulatedducking from "@/assets/insulated-ducking.png";
+import stacks from "@/assets/stacks.png"; 
+import conical from "@/assets/conical.jpg";
+import transportationframe from "@/assets/transportationframe.jpeg";
+import welding_operations from "@/assets/welding-operations.jpg"; 
 
 const Gallery = () => {
   const galleryCategories = [
@@ -14,14 +24,14 @@ const Gallery = () => {
       description: "Our state-of-the-art manufacturing facilities at Bhosari & Chakan",
       images: [
         {
-          src: heroManufacturing,
+          src: plant,
           title: "Unit I - Bhosari MIDC",
           description: "Main manufacturing facility with 90,000 sq ft plot area"
         },
         {
           src: machinery,
-          title: "Advanced Machinery",
-          description: "Modern fabrication equipment and machinery"
+          title: "Plasma cutting machine",
+          description: "3metres x 15 metres Modern equipment and machinery"
         },
         {
           src: fabricationWork,
@@ -37,19 +47,19 @@ const Gallery = () => {
       description: "Showcase of our high-quality fabricated components and structures",
       images: [
         {
-          src: fabricationWork,
-          title: "HRSG Casing Panels",
-          description: "Precision-fabricated Heat Recovery Steam Generator panels"
+          src: conical,
+          title: "conical hopper",
+          description: ""
         },
         {
-          src: heroManufacturing,
-          title: "Structural Steelwork",
-          description: "Heavy structural columns, beams, and assemblies"
+          src: steelwork,
+          title: "Industrial Duct",
+          description: ""
         },
         {
-          src: machinery,
+          src: industrialtank,
           title: "Industrial Tanks",
-          description: "Custom-designed storage and process tanks"
+          description: ""
         }
       ]
     },
@@ -60,14 +70,14 @@ const Gallery = () => {
       description: "Our advanced fabrication and surface treatment processes",
       images: [
         {
-          src: machinery,
+          src: welding_operations,
           title: "Welding Operations",
           description: "Advanced CO₂ and Arc welding processes"
         },
         {
-          src: fabricationWork,
-          title: "Surface Treatment",
-          description: "Grit blasting and industrial painting operations"
+          src: insulatedducking,
+          title: "Insulated Ducting",
+          description: "wrapped with an insulating material for protection"
         },
         {
           src: heroManufacturing,
@@ -83,19 +93,19 @@ const Gallery = () => {
       description: "Export-ready assemblies and dispatch operations",
       images: [
         {
-          src: heroManufacturing,
+          src: packaging,
           title: "Export Packaging",
           description: "Professional packaging for international shipments"
         },
         {
-          src: fabricationWork,
-          title: "Container Loading",
-          description: "Systematic loading and dispatch operations"
+          src: stacks,
+          title: "Stacks",
+          description: "large industrial Rotary Dryer being transported"
         },
         {
-          src: machinery,
-          title: "Quality Verification",
-          description: "Final inspection before dispatch"
+          src: transportationframe,
+          title: "Transportation Frame",
+          description: "frames and equipment used to transport goods"
         }
       ]
     }

@@ -3,15 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-manufacturing.jpg";
 import superTechLogo from "@/assets/super-tech-logo.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-primary via-primary-hover to-primary/80 text-white overflow-hidden">
+      <section className="relative min-h-screen bg-gradient-to-br from-primary via-primary-hover to-primary/150 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0"
           style={{ backgroundImage: `url(${heroImage})` }}
         ></div>
         
@@ -24,7 +25,7 @@ const Home = () => {
                   Welcome to <span className="text-red-200">Super Tech</span>
                 </h1>
                 <p className="text-xl lg:text-2xl text-red-100 mb-2">
-                  Precision in Fabrication | Excellence in Delivery
+                  Heavy Fabrication | Excellence in Delivery
                 </p>
               </div>
             </div>
@@ -35,14 +36,27 @@ const Home = () => {
               chimneys, stacks, ducts, tanks, hoppers, platforms, railings, and structural steelwork.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" className="text-primary hover:text-primary-hover">
-                Explore Our Services
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-                Get Quote
-              </Button>
-            </div>
+<div className="flex flex-col sm:flex-row gap-4">
+  <Link to="/products">
+    <Button
+      size="lg"
+      variant="secondary"
+      className="text-primary hover:text-primary-hover"
+    >
+      Explore Our Services
+    </Button>
+  </Link>
+
+  <Link to="/contact">
+    <Button
+      size="lg"
+      variant="outline"
+      className="border-white text-white bg-primary hover:bg-primary-hover hover:text-secondary-hover"
+    >
+      Get Quote
+    </Button>
+  </Link>
+</div>
           </div>
         </div>
       </section>

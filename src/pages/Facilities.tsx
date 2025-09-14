@@ -45,7 +45,7 @@ const Facilities = () => {
                   <p className="text-sm text-muted-foreground">Plot Area (Sq. Ft.)</p>
                 </div>
                 <div className="text-center p-4 bg-muted/30 rounded-lg">
-                  <p className="text-2xl font-bold text-primary">16,000</p>
+                  <p className="text-2xl font-bold text-primary">25,000</p>
                   <p className="text-sm text-muted-foreground">Covered Area (Sq. Ft.)</p>
                 </div>
                 <div className="text-center p-4 bg-muted/30 rounded-lg">
@@ -81,7 +81,7 @@ const Facilities = () => {
                 <Factory className="h-8 w-8 text-primary" />
                 <div>
                   <CardTitle className="text-2xl">Unit II - Chakan MIDC</CardTitle>
-                  <p className="text-muted-foreground">Specialized Processing Hub</p>
+                  <p className="text-muted-foreground">Secondary Manufacturing Hub</p>
                 </div>
               </div>
             </CardHeader>
@@ -102,11 +102,11 @@ const Facilities = () => {
                   <p className="text-sm text-muted-foreground">Plot Area (Sq. Ft.)</p>
                 </div>
                 <div className="text-center p-4 bg-muted/30 rounded-lg">
-                  <p className="text-2xl font-bold text-primary">6,000</p>
+                  <p className="text-2xl font-bold text-primary">40,000</p>
                   <p className="text-sm text-muted-foreground">Covered Area (Sq. Ft.)</p>
                 </div>
                 <div className="text-center p-4 bg-muted/30 rounded-lg">
-                  <p className="text-2xl font-bold text-primary">76,600</p>
+                  <p className="text-2xl font-bold text-primary">55,600</p>
                   <p className="text-sm text-muted-foreground">Open Area (Sq. Ft.)</p>
                 </div>
               </div>
@@ -258,11 +258,11 @@ const Facilities = () => {
               <p className="text-muted-foreground">Total Plot Area (Sq. Ft.)</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">131,600</div>
+              <div className="text-3xl font-bold text-primary mb-2">110,600</div>
               <p className="text-muted-foreground">Total Open Area (Sq. Ft.)</p>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">22,000</div>
+              <div className="text-3xl font-bold text-primary mb-2">75,000</div>
               <p className="text-muted-foreground">Total Covered Area (Sq. Ft.)</p>
             </div>
           </div>

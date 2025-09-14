@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "emailjs-com";
 import { MapPin, Phone, Mail, Building, FileText, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -21,24 +22,50 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("https://demo.raydito.com/sendMail.php", {
+      method: "POST",
+      body: new URLSearchParams(formData),
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    });
+
+    const result = await response.json();
+
+    if (result.status === "success") {
+      toast({
+        title: "Enquiry Submitted",
+        description: "Thank you for your interest. We'll get back to you within 24 hours.",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        enquiryType: "",
+        productInterest: "",
+        projectDetails: "",
+        message: "",
+      });
+    } else {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+      });
+    }
+  } catch (error) {
+    console.error("Mail Error:", error);
     toast({
-      title: "Enquiry Submitted",
-      description: "Thank you for your interest. We'll get back to you within 24 hours.",
+      title: "Error",
+      description: "Unable to send your enquiry. Please try again.",
     });
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      enquiryType: "",
-      productInterest: "",
-      projectDetails: "",
-      message: ""
-    });
-  };
+  }
+};
+
 
   return (
     <div className="min-h-screen py-20">
@@ -53,7 +80,7 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* Contact Information */}
+          {/* Left side - Contact info */}
           <div className="lg:col-span-1 space-y-6">
             {/* Unit I */}
             <Card className="shadow-medium">
@@ -63,7 +90,7 @@ const Contact = () => {
                   Unit I - Bhosari MIDC
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent>
                 <div className="flex items-start gap-2 text-sm">
                   <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>J251/252, M.I.D.C, Bhosari, Pune – 411026, Maharashtra, India</span>
@@ -79,7 +106,7 @@ const Contact = () => {
                   Unit II - Chakan MIDC
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent>
                 <div className="flex items-start gap-2 text-sm">
                   <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>Plot No. B4, M.I.D.C, Mahalunge, Tal. Khed, Pune – 410501, Maharashtra, India</span>
@@ -179,7 +206,10 @@ const Contact = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <Label htmlFor="enquiryType">Enquiry Type</Label>
-                      <Select value={formData.enquiryType} onValueChange={(value) => setFormData({ ...formData, enquiryType: value })}>
+                      <Select
+                        value={formData.enquiryType}
+                        onValueChange={(value) => setFormData({ ...formData, enquiryType: value })}
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Select enquiry type" />
                         </SelectTrigger>
@@ -194,7 +224,10 @@ const Contact = () => {
                     </div>
                     <div>
                       <Label htmlFor="productInterest">Product Interest</Label>
-                      <Select value={formData.productInterest} onValueChange={(value) => setFormData({ ...formData, productInterest: value })}>
+                      <Select
+                        value={formData.productInterest}
+                        onValueChange={(value) => setFormData({ ...formData, productInterest: value })}
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Select product category" />
                         </SelectTrigger>

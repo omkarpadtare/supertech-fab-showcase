@@ -46,7 +46,7 @@ const Header = () => {
               Super-Tech
             </h1>
             <p className="text-xs text-muted-foreground">
-              Precision in Fabrication | Excellence in Delivery
+              Heavy Fabrication | Excellence in Delivery
             </p>
           </div>
 
