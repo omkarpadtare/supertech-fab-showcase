@@ -1,7 +1,6 @@
-import { Building2, Award, Globe, Users, ArrowRight, CheckCircle, Zap } from "lucide-react";
+import { Building2, Award, Globe, Users, ArrowRight, CheckCircle, Zap, Factory, Settings, Wrench, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import heroImage from "@/assets/hero-manufacturing.jpg";
 import superTechLogo from "@/assets/super-tech-logo.png";
 import { Link } from "react-router-dom";
 
@@ -9,16 +8,30 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
-        {/* Background Image with Overlay */}
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-primary via-primary-hover to-secondary">
+        {/* Geometric Illustration Background */}
         <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="Super-Tech heavy fabrication manufacturing facility"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary-hover/80 to-primary/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary-hover/90 to-secondary/85"></div>
+          
+          {/* Industrial Illustration Elements */}
+          <div className="absolute top-20 left-20 opacity-10">
+            <Factory className="w-32 h-32 text-white transform rotate-12" />
+          </div>
+          <div className="absolute top-40 right-32 opacity-15">
+            <Settings className="w-24 h-24 text-accent transform -rotate-45 animate-spin-slow" />
+          </div>
+          <div className="absolute bottom-32 left-32 opacity-10">
+            <Wrench className="w-28 h-28 text-white transform rotate-45" />
+          </div>
+          <div className="absolute bottom-20 right-20 opacity-10">
+            <Building2 className="w-36 h-36 text-secondary transform -rotate-12" />
+          </div>
+          
+          {/* Geometric Shapes */}
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-20 bg-accent/30 transform rotate-45"></div>
+          <div className="absolute bottom-1/3 left-1/3 w-1 h-16 bg-secondary/40 transform -rotate-12"></div>
+          <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-accent/60 rotate-45"></div>
         </div>
 
         {/* Floating Elements */}
